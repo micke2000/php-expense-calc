@@ -1,0 +1,6 @@
+Pliki w folderze "sql" należy wgrać do bazy danych projekt.
+Strona startowa to home_page.php
+
+Walidatory:
+- w polach Name i Username tylko litery i cyfry 
+- hasło musi mieć co najmniej 8 znaków i jedną cyfrę  

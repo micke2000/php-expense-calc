@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --color_dark_blue: #516BEB;
+    --color_light_blue: #84DFFF;
+    --color_beige: #F8F2B3;
+    --color_pink: #F0D9F5;
+}
+html {
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+}
+
+div.wrapper{
+    width: 80vw;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.wrapper header {
+    position: relative;
+    text-align: center;
+    width: 80%;
+    border-bottom-color: var(--color_pink);
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    max-width: 450px;
+}
+div.wrapper header h1{
+    font-size: 2.5rem;
+}
+div.wrapper header h1.open{
+    animation-name: scale_Y;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-fill-mode:  forwards;
+}
+div.wrapper header h1.exit{
+    animation-name: scale_Y_to_zero;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-fill-mode:  forwards;
+}
+header strong {
+    font-weight: 700;
+    font-family: 'Lora', serif;
+}
+div.wrapper main{
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    animation: open 1.7s ease-in-out 0s 1 normal forwards;
+}
+div.wrapper main.exit{
+    animation: exit 1.7s ease-in-out 0s 1 normal forwards;
+}
+div.wrapper main h2{
+    font-size:1.8rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+div.wrapper main form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+div.wrapper main form .form_button{
+    width: 20%;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 2rem;
+    background-color: var(--color_light_blue);
+    width: 40vw;
+    height: 8vh;
+    font-size:1.3rem;
+    font-family: 'Karla', sans-serif;
+    max-height: 70px;
+    max-width: 270px;
+    min-width: 150px;
+    min-height: 60px;
+    transition: 0.2s ease-in-out;
+}
+div.wrapper main form .form_button:hover{
+    transition: 0.2s ease-in-out;
+    transform: translateY(-10%);
+    color: black;
+}
+div.wrapper main form input.form_button{
+     background-color: var(--color_dark_blue);
+     margin-bottom: 1rem;
+     margin-top: 2.5rem;
+     font-weight: 800;
+}
+div.wrapper main form label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size:1.4rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+div.wrapper main form label p{
+    margin-top: 1%;
+    font-size:1rem;
+}
+div.wrapper main form label input{
+    font-family: 'Karla', sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    min-width: 250px;
+    min-height: 30px;
+    max-width: 300px;
+    width:30vw;
+    height: 6vh;
+    max-height: 40px;
+    border-radius: 0.8rem;
+    border-style: none;
+    outline: none;
+    background-color: var(--color_pink);
+    transition: 0.2s ease-in-out;
+}
+div.wrapper main form label select{
+    font-family: 'Karla', sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    min-width: 250px;
+    min-height: 30px;
+    max-width: 300px;
+    width:30vw;
+    height: 6vh;
+    max-height: 40px;
+    border-radius: 0.8rem;
+    border-style: none;
+    outline: none;
+    background-color: var(--color_pink);
+    transition: 0.2s ease-in-out;
+}
+div.wrapper main form label p.error_message{
+    content: "sds";
+    font-size: 1.2rem;
+    text-align: center;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    /* background-color: black; */
+    color: rgb(212, 65, 65);
+}
+div.wrapper main form label input:focus{
+    transition: 0.2s ease-in-out;
+    background-color: var(--color_beige);
+}
+p.error-login{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: rgb(212, 65, 65);
+}
+@keyframes open{
+    0%{
+        transform: translateX(80%);
+    }
+    90%{
+        transform: translateX(-1%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes exit{
+    0%{
+        transform: translateX(0);
+    }
+    10%{
+        transform: translateX(1%);
+    }
+    100%{
+        transform: translateX(80%);
+    }
+}
+@keyframes scale_Y{
+    from{
+        transform: scaleY(0);
+    }
+    to{
+        transform: scaleY(1);
+    }
+}
+@keyframes scale_Y_to_zero{
+    from{
+        transform: scaleY(1);
+    }
+    to{
+        transform: scaleY(0);
+    }
+}
